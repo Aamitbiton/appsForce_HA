@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Tahoma, sans-serif;
+}
+.css-1qxadfk-MuiPaper-root-MuiDialog-paper, .css-sd33hq {
+
+  background-color: #1b1b41 !important;
+}
+:root {
+  color-scheme: dark;
+  --primary-color: #6565fd;
+  --background-color: #1b1b41;
+  --surface-color: #20204b;
+  --text-color: #d8d8d8;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-color);
+}
