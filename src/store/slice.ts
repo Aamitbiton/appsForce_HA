@@ -13,18 +13,26 @@ const usersSlice = createSlice({
   initialState,
   reducers: {
     deleteUser: (users, action) => {
-      users.allUsers = users.allUsers.filter(
-        (user) => user.email !== action.payload
+      let res = users.allUsers.filter(
+          (user) => user.email !== action.payload
       );
+      users.allUsers = res;
+      users.filteredUsers = res;
     },
 
     editUser: (users, action) => {
-      let i = users.allUsers.findIndex(
+      let allUsersI = users.allUsers.findIndex(
         (user) => user.email === action.payload.email
       );
-      users.allUsers[i].location = action.payload.location;
-      users.allUsers[i].name.first = action.payload.name;
-      users.allUsers[i].email = action.payload.email;
+      let filteredUsersI = users.filteredUsers.findIndex(
+          (user) => user.email === action.payload.email
+      );
+      users.allUsers[allUsersI].location = action.payload.location;
+      users.allUsers[allUsersI].name.first = action.payload.name;
+      users.allUsers[allUsersI].email = action.payload.email;
+      users.filteredUsers[filteredUsersI].location = action.payload.location;
+      users.filteredUsers[filteredUsersI].name.first = action.payload.name;
+      users.filteredUsers[filteredUsersI].email = action.payload.email;
     },
 
     addUsers: (users, action) => {
